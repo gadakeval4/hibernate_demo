@@ -1,8 +1,13 @@
 package HibernateDemo.HibernateDemo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Student {
+	@Id
 	private int id;
-	private String name;
+	private Name name;
 	private int age;
 	public int getId() {
 		return id;
@@ -10,10 +15,11 @@ public class Student {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
+
+	public Name getName() {
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(Name name) {
 		this.name = name;
 	}
 	public int getAge() {
@@ -26,12 +32,7 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
-	public Student(int id, String name, int age) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.age = age;
-	}
+	
 	public Student() {
 		super();	
 	}
