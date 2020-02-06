@@ -9,6 +9,15 @@ public class Student {
 	private int id;
 	private Name name;
 	private int age;
+	
+//	private Laptop laptop;
+//	
+	
+	
+	/*
+	 * public Laptop getLaptop() { return laptop; } public void setLaptop(Laptop
+	 * laptop) { this.laptop = laptop; }
+	 */
 	public int getId() {
 		return id;
 	}
