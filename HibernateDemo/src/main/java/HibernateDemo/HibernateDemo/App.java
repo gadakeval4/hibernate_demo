@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -68,17 +69,29 @@ public class App
 		 */
 		
 //		Query query=session.createQuery("from Student where age > 100");
-//		
-		Query query=session.createQuery("from Student where age = 139");
-		Student student=(Student) query.uniqueResult();
-		
+
+		//HQL		
+		/*
+		 * Query query=session.createQuery("from Student where age = 139"); Student
+		 * student=(Student) query.uniqueResult();
+		 */
 //		List<Student> students= query.list();
 		
 		/*
 		 * for (Student student : students) { System.out.println(student); }
 		 */
-		System.out.println(student);
+//		System.out.println(student);
 		
+		
+		
+		//SQL Query
+		SQLQuery query=session.createSQLQuery("select * from student");
+		query.addEntity(Student.class);
+		List<Student> students=query.list();
+		
+		for (Student student : students) {
+			System.out.println(student);
+		}
 		
 		transaction.commit();
 
